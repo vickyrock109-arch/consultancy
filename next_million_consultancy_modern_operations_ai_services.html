@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Million Consultancy | Operations, Workforce & AI Data Solutions</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0f172a',
+                            900: '#0b1120',
+                            950: '#070a12',
+                        },
+                        teal: {
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            700: '#0f766e',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        
+        .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #14b8a6 50%, #fbbf24 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-border {
+            border-image: linear-gradient(to right, #0d9488, #2563eb) 1;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(20, 184, 166, 0.4);
+            box-shadow: 0 10px 30px -10px rgba(13, 148, 136, 0.3);
+        }
+
+        .hero-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(13,148,136,0.15) 0%, rgba(37,99,235,0.08) 50%, rgba(0,0,0,0) 70%);
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden bg-navy-900 text-slate-100">
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-50 glass-card border-b border-slate-800/80 bg-navy-900/90 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- SVG Logo & Brand Name -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="relative w-11 h-11 flex items-center justify-center rounded-xl bg-gradient-to-br from-teal-500 via-blue-600 to-indigo-700 p-0.5 shadow-lg shadow-teal-500/20 group-hover:scale-105 transition-transform duration-300">
+                        <div class="w-full h-full bg-navy-900 rounded-[10px] flex items-center justify-center p-2">
+                            <!-- Custom SVG Badge for NMC -->
+                            <svg class="w-full h-full text-teal-400" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 75L20 25L45 55L70 25L70 75" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                                <circle cx="80" cy="25" r="7" fill="#fbbf24"/>
+                                <path d="M20 75H80" stroke="#38bdf8" stroke-width="8" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-xl font-bold font-heading tracking-tight text-white group-hover:text-teal-400 transition-colors">
+                            Next Million
+                        </span>
+                        <span class="text-[10px] font-semibold tracking-widest text-teal-400 uppercase -mt-1">
+                            Consultancy
+                        </span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#home" class="text-slate-300 hover:text-teal-400 transition-colors">Home</a>
+                    <a href="#services" class="text-slate-300 hover:text-teal-400 transition-colors">Services</a>
+                    <a href="#stats" class="text-slate-300 hover:text-teal-400 transition-colors">Impact</a>
+                    <a href="#clients" class="text-slate-300 hover:text-teal-400 transition-colors">Industries</a>
+                    <a href="#about" class="text-slate-300 hover:text-teal-400 transition-colors">About</a>
+                    <a href="#contact" class="text-slate-300 hover:text-teal-400 transition-colors">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <a href="tel:+918917440534" class="flex items-center space-x-2 text-xs font-semibold px-3 py-2 rounded-lg bg-slate-800 text-teal-400 border border-teal-500/20 hover:border-teal-500/50 transition-all">
+                        <i class="fa-solid fa-phone text-xs"></i>
+                        <span>+91 8917440534</span>
+                    </a>
+                    <a href="#contact" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white text-sm font-semibold shadow-lg shadow-teal-500/20 transition-all transform hover:-translate-y-0.5">
+                        Get Started
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-400 hover:text-white focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-900 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Home</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Services</a>
+            <a href="#stats" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Impact</a>
+            <a href="#clients" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Clients</a>
+            <a href="#about" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">About Us</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-slate-800">Contact Us</a>
+            <div class="pt-2 border-t border-slate-800">
+                <a href="tel:+918917440534" class="flex items-center justify-center space-x-2 w-full py-3 rounded-xl bg-teal-500/10 text-teal-400 font-semibold border border-teal-500/30">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+91 8917440534</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative pt-16 pb-20 md:pt-28 md:pb-32 overflow-hidden">
+        <div class="hero-glow"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Hero Text Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1.5 rounded-full bg-teal-500/10 border border-teal-500/30 text-teal-300 text-xs font-semibold uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                        <span>Established May 2026 • Odisha, India</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold font-heading tracking-tight text-white leading-tight">
+                        Powering Enterprise <br>
+                        <span class="gradient-text">Operations, Integrity & AI Data</span>
+                    </h1>
+
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Next Million Consultancy deploys workforce solutions at scale. From mystery shopping and nationwide field audits to online proctoring, offline invigilation, and high-precision AI data annotation.
+                    </p>
+
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-semibold text-center shadow-lg shadow-teal-500/25 transition-all transform hover:-translate-y-1">
+                            Explore Our Services <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-semibold text-center transition-all">
+                            Partner With Us
+                        </a>
+                    </div>
+
+                    <!-- Trust Badge -->
+                    <div class="pt-6 border-t border-slate-800/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-slate-400 text-xs font-medium">
+                        <span class="flex items-center"><i class="fa-solid fa-check-circle text-teal-400 mr-2"></i> 1,000+ Freelancer Pool</span>
+                        <span class="flex items-center"><i class="fa-solid fa-check-circle text-teal-400 mr-2"></i> Nationwide Coverage</span>
+                        <span class="flex items-center"><i class="fa-solid fa-check-circle text-teal-400 mr-2"></i> SLA Driven Execution</span>
+                    </div>
+                </div>
+
+                <!-- Right Hero Decorative Graphic Card -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md lg:max-w-none">
+                        <!-- Decorative background glow -->
+                        <div class="absolute -inset-1 bg-gradient-to-r from-teal-500 to-blue-600 rounded-3xl opacity-30 blur-xl"></div>
+                        
+                        <div class="relative glass-card rounded-2xl p-6 sm:p-8 space-y-6">
+                            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-amber-500"></div>
+                                    <div class="w-3 h-3 rounded-full bg-teal-500"></div>
+                                </div>
+                                <span class="text-xs font-mono text-slate-400">NMC Operations Dashboard</span>
+                            </div>
+
+                            <!-- Live Counter Feature Cards -->
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <div class="text-teal-400 text-xl font-bold font-heading">200+</div>
+                                    <div class="text-xs text-slate-400 mt-1">Mystery Shopping Audits Done</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <div class="text-blue-400 text-xl font-bold font-heading">500+ hrs</div>
+                                    <div class="text-xs text-slate-400 mt-1">Online Proctoring</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <div class="text-amber-400 text-xl font-bold font-heading">50+</div>
+                                    <div class="text-xs text-slate-400 mt-1">Offline Invigilators</div>
+                                </div>
+                                <div class="p-4 rounded-xl bg-slate-900/60 border border-slate-800">
+                                    <div class="text-purple-400 text-xl font-bold font-heading">1,000+</div>
+                                    <div class="text-xs text-slate-400 mt-1">Gig Talent Network</div>
+                                </div>
+                            </div>
+    <!-- Clients / Industry Sectors Section -->
+    <section id="clients" class="py-12 bg-navy-950/60 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
+                Empowering Enterprises Across Industry Sectors
+            </p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
+                
+                <!-- Category 1: Banking & Financial Institutions -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center text-center group transition-all duration-300">
+                    <i class="fa-solid fa-building-columns text-2xl text-teal-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-bold font-heading text-slate-200 group-hover:text-teal-400 transition-colors">Banking & Finance</span>
+                    <span class="text-[10px] text-slate-500 mt-0.5">Audit & Invigilation</span>
+                </div>
+
+                <!-- Category 2: Tech & Workforce Enterprises -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center text-center group transition-all duration-300">
+                    <i class="fa-solid fa-network-wired text-2xl text-blue-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-bold font-heading text-slate-200 group-hover:text-blue-400 transition-colors">Tech Enterprises</span>
+                    <span class="text-[10px] text-slate-500 mt-0.5">Workforce Management</span>
+                </div>
+
+                <!-- Category 3: Healthcare Platforms -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center text-center group transition-all duration-300">
+                    <i class="fa-solid fa-notes-medical text-2xl text-emerald-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-bold font-heading text-slate-200 group-hover:text-emerald-400 transition-colors">Healthcare & MedTech</span>
+                    <span class="text-[10px] text-slate-500 mt-0.5">Field Compliance</span>
+                </div>
+
+                <!-- Category 4: AI & Machine Learning Firms -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center text-center group transition-all duration-300">
+                    <i class="fa-solid fa-brain text-2xl text-purple-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-bold font-heading text-slate-200 group-hover:text-purple-400 transition-colors">AI & Data Labs</span>
+                    <span class="text-[10px] text-slate-500 mt-0.5">Data & Annotation</span>
+                </div>
+
+                <!-- Category 5: Education & EdTech -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center text-center group transition-all duration-300 col-span-2 sm:col-span-1">
+                    <i class="fa-solid fa-graduation-cap text-2xl text-amber-400 mb-2 group-hover:scale-110 transition-transform"></i>
+                    <span class="text-sm font-bold font-heading text-slate-200 group-hover:text-amber-400 transition-colors">Education & EdTech</span>
+                    <span class="text-[10px] text-slate-500 mt-0.5">Online Proctoring</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clients" class="py-12 bg-navy-950/60 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-center text-xs font-semibold uppercase tracking-widest text-slate-400 mb-8">
+                Trusted by Forward-Thinking Industry Leaders
+            </p>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
+                
+                <!-- Client 1: Meditab -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center group transition-all duration-300">
+                    <span class="text-lg font-bold font-heading text-slate-300 group-hover:text-teal-400 transition-colors">Meditab</span>
+                    <span class="text-[10px] text-slate-500">Healthcare Solutions</span>
+                </div>
+
+                <!-- Client 2: BetterPlace -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center group transition-all duration-300">
+                    <span class="text-lg font-bold font-heading text-slate-300 group-hover:text-teal-400 transition-colors">BetterPlace</span>
+                    <span class="text-[10px] text-slate-500">Workforce Management</span>
+                </div>
+
+                <!-- Client 3: Obicna -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center group transition-all duration-300">
+                    <span class="text-lg font-bold font-heading text-slate-300 group-hover:text-teal-400 transition-colors">Obicna</span>
+                    <span class="text-[10px] text-slate-500">Enterprise Tech</span>
+                </div>
+
+                <!-- Client 4: Tellus -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center group transition-all duration-300">
+                    <span class="text-lg font-bold font-heading text-slate-300 group-hover:text-teal-400 transition-colors">Tellus</span>
+                    <span class="text-[10px] text-slate-500">Global Operations</span>
+                </div>
+
+                <!-- Client 5: Axis Bank -->
+                <div class="p-6 rounded-xl glass-card flex flex-col items-center justify-center group transition-all duration-300 col-span-2 sm:col-span-1">
+                    <span class="text-lg font-bold font-heading text-slate-300 group-hover:text-teal-400 transition-colors">Axis Bank</span>
+                    <span class="text-[10px] text-slate-500">Banking & Finance</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Our Core Capabilities</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold font-heading text-white">Comprehensive Services Tailored for Growth</h3>
+                <p class="text-slate-400 mt-4 text-base">We bridge ground operational audits, high-stakes exam monitoring, and cutting-edge artificial intelligence data pipelines.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Service 1: Field Audits -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-teal-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-teal-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-[#14b8a6] fa-clipboard-check"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">Field Audits</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Rigorous ground verification, retail store compliance checks, infrastructure validation, and operational standards auditing across urban and rural locations.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Retail Store & Inventory Audits</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> On-ground Merchant Verification</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Compliance & SLA Verification</li>
+                    </ul>
+                </div>
+
+                <!-- Service 2: Mystery Shopping -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-blue-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-user-secret"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">Mystery Shopping</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Unbiased customer experience evaluations, customer journey mapping, staff adherence testing, and competitive brand intelligence.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Customer Service Benchmarking</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> SOP Adherence Checks</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Detailed Experience Feedback</li>
+                    </ul>
+                </div>
+
+                <!-- Service 3: Online Proctoring -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-purple-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">Online Proctoring</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Secure, real-time remote assessment monitoring to guarantee exam integrity, identity verification, and anti-cheating enforcement.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Live Video & Audio Monitoring</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Candidate Identity Verification</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Anomaly & Violation Flagging</li>
+                    </ul>
+                </div>
+
+                <!-- Service 4: Offline Invigilation -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-amber-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">Offline Invigilation</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Deployment of trained test administrators and invigilators for physical exam centers, universities, and corporate assessment facilities.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> On-site Exam Center Management</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Paper Distribution & Security</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Candidate ID & Biometric Verification</li>
+                    </ul>
+                </div>
+
+                <!-- Service 5: AI Data Collection -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-rose-500/10 border border-rose-500/20 flex items-center justify-center text-rose-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-[#f43f5e] fa-database"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">AI Data Collection</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Diverse, high-quality audio, video, image, and text dataset gathering powered by our extensive crowd-sourcing freelancer community.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Multilingual Speech Datasets</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Computer Vision Image/Video Capture</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Domain-Specific Text Corpus Gathering</li>
+                    </ul>
+                </div>
+
+                <!-- Service 6: AI Data Annotation -->
+                <div class="glass-card rounded-2xl p-8 flex flex-col justify-between transition-all duration-300 group hover:-translate-y-2">
+                    <div>
+                        <div class="w-14 h-14 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 text-2xl mb-6 group-hover:scale-110 group-hover:bg-indigo-500 group-hover:text-navy-900 transition-all">
+                            <i class="fa-solid fa-[#6366f1] fa-tags"></i>
+                        </div>
+                        <h4 class="text-xl font-bold font-heading text-white mb-3">AI Data Annotation</h4>
+                        <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                            Precision labeling, polygon bounding boxes, sentiment tagging, semantic segmentation, and RLHF feedback to train ML models.
+                        </p>
+                    </div>
+                    <ul class="space-y-2 text-xs text-slate-300 border-t border-slate-800 pt-4">
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Image & Video Bounding Boxes</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> Text Sentiment & NER Tagging</li>
+                        <li class="flex items-center"><i class="fa-solid fa-angle-right text-teal-400 mr-2"></i> RLHF Model Evaluation & Tuning</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Metrics Section -->
+    <section id="stats" class="py-20 bg-gradient-to-b from-navy-950 to-navy-900 border-y border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-widest text-teal-400 mb-2">Proven Excellence</h2>
+                <h3 class="text-3xl font-extrabold font-heading text-white">Our Track Record in Numbers</h3>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 text-center">
+                
+                <div class="p-6 rounded-2xl glass-card">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-400 text-xl">
+                        <i class="fa-solid fa-user-secret font-bold"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1">200+</div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Mystery Shopping Audits Done</div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-card">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-xl">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1">500+</div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Online Proctoring Hours</div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-card">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-400 text-xl">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1">50+</div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Offline Invigilators</div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-card">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-purple-500/10 flex items-center justify-center text-purple-400 text-xl">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1">500+</div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">AI Data Contributors</div>
+                </div>
+
+                <div class="p-6 rounded-2xl glass-card col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 mx-auto mb-4 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl">
+                        <i class="fa-solid fa-users text-emerald-400"></i>
+                    </div>
+                    <div class="text-3xl sm:text-4xl font-extrabold font-heading text-white mb-1">1,000+</div>
+                    <div class="text-xs font-medium text-slate-400 uppercase tracking-wider">Freelancer Talent Pool</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <div class="space-y-6">
+                    <span class="text-xs font-bold uppercase tracking-widest text-teal-400">About Next Million Consultancy</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white leading-tight">
+                        Scalable Field Operations Meets Cutting-Edge AI Solutions
+                    </h2>
+                    <p class="text-slate-300 text-base leading-relaxed">
+                        Incorporated in **May 2026** and rooted in **Sarankul, Nayagarh (Odisha)**, Next Million Consultancy was built to redefine how companies manage distributed physical operations, maintain academic/corporate testing integrity, and feed high-fidelity datasets to AI algorithms.
+                    </p>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Through our proprietary **Community Talent Pool of 1,000+ skilled freelancers**, we mobilize on-demand field auditors, proctors, and data annotators quickly and reliably across tier-1 to tier-4 regions in India.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-4 pt-4">
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/60">
+                            <div class="text-teal-400 font-bold text-lg font-heading">Rapid Deployment</div>
+                            <div class="text-xs text-slate-400 mt-1">Deploy trained workers anywhere within 24-48 hours</div>
+                        </div>
+                        <div class="p-4 rounded-xl bg-slate-800/50 border border-slate-700/60">
+                            <div class="text-teal-400 font-bold text-lg font-heading">High Quality Control</div>
+                            <div class="text-xs text-slate-400 mt-1">Multi-tier audit verification & zero-compromise accuracy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card rounded-3xl p-8 space-y-6 relative z-10 border border-slate-700">
+                        <h3 class="text-xl font-bold font-heading text-white border-b border-slate-800 pb-4">
+                            Why Choose Next Million?
+                        </h3>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center shrink-0 font-bold">01</div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Vetted Talent Community</h4>
+                                <p class="text-slate-400 text-xs mt-1">Our 1000+ workforce is pre-screened, trained, and monitored for SLA compliance.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 font-bold">02</div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">Cost-Effective Scalability</h4>
+                                <p class="text-slate-400 text-xs mt-1">Pay for what you execute without incurring fixed operational overheads.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0 font-bold">03</div>
+                            <div>
+                                <h4 class="text-white font-semibold text-sm">End-to-End Governance</h4>
+                                <p class="text-slate-400 text-xs mt-1">From initial brief to final data payload or audit report, we handle complete project execution.</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-navy-950/80 border-t border-slate-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Contact Info Left -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-widest text-teal-400">Get In Touch</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white mt-2">Let’s Discuss Your Operational Needs</h2>
+                        <p class="text-slate-400 text-sm mt-3">Whether you need field auditors, exam proctors, or an AI dataset collection team, we are ready to scale with you.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        
+                        <!-- Phone -->
+                        <a href="tel:+918917440534" class="p-4 rounded-xl glass-card flex items-center space-x-4 hover:border-teal-500/50 transition-all block">
+                            <div class="w-12 h-12 rounded-lg bg-teal-500/10 text-teal-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold">Phone / WhatsApp</span>
+                                <h4 class="text-white font-bold text-base">+91 8917440534</h4>
+                            </div>
+                        </a>
+
+                        <!-- Location -->
+                        <div class="p-4 rounded-xl glass-card flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-blue-500/10 text-blue-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold">Head Office Address</span>
+                                <h4 class="text-white font-bold text-sm">Sarankul, Nayagarh</h4>
+                                <p class="text-xs text-slate-400">Odisha, PIN Code: 752080, India</p>
+                            </div>
+                        </div>
+
+                        <!-- Incorporation Info -->
+                        <div class="p-4 rounded-xl glass-card flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-amber-500/10 text-amber-400 flex items-center justify-center text-xl shrink-0">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-slate-400 uppercase font-semibold">Entity Details</span>
+                                <h4 class="text-white font-bold text-sm">Next Million Consultancy</h4>
+                                <p class="text-xs text-slate-400">Incorporated May 2026</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Form Right -->
+                <div class="lg:col-span-7">
+                    <div class="glass-card rounded-3xl p-8 border border-slate-800">
+                        <h3 class="text-2xl font-bold font-heading text-white mb-6">Send Us a Message</h3>
+                        
+                        <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Your Name</label>
+                                    <input type="text" required placeholder="John Doe" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Phone / Mobile</label>
+                                    <input type="tel" required placeholder="+91 9876543210" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Email Address</label>
+                                    <input type="email" required placeholder="john@company.com" class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Required Service</label>
+                                    <select required class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white focus:outline-none focus:border-teal-400 transition-colors text-sm">
+                                        <option value="" disabled selected>Select a Service</option>
+                                        <option value="field-audits">Field Audits</option>
+                                        <option value="mystery-shopping">Mystery Shopping</option>
+                                        <option value="online-proctoring">Online Proctoring</option>
+                                        <option value="offline-invigilation">Offline Invigilation</option>
+                                        <option value="ai-data-collection">AI Data Collection</option>
+                                        <option value="ai-data-annotation">AI Data Annotation</option>
+                                        <option value="freelancer-community">Join as Freelancer</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-xs font-semibold uppercase text-slate-300 mb-2">Project Brief / Message</label>
+                                <textarea rows="4" required placeholder="Tell us about your requirements, timeline, and scope..." class="w-full px-4 py-3 rounded-xl bg-slate-900/80 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-teal-400 transition-colors text-sm"></textarea>
+                            </div>
+
+                            <button type="submit" class="w-full py-4 rounded-xl bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-600 hover:to-blue-700 text-white font-bold text-sm shadow-lg shadow-teal-500/20 transition-all">
+                                Send Inquiry
+                            </button>
+                        </form>
+
+                        <!-- Success Message Notification -->
+                        <div id="form-success" class="hidden mt-4 p-4 rounded-xl bg-teal-500/20 border border-teal-500/40 text-teal-300 text-sm text-center">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Thank you! Your inquiry has been submitted successfully. We will get back to you shortly.
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 border-t border-slate-800 text-slate-400 py-12 text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Column 1: Brand -->
+                <div class="space-y-4 md:col-span-2">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-teal-500 to-blue-600 p-0.5">
+                            <div class="w-full h-full bg-navy-900 rounded-[7px] flex items-center justify-center p-1.5">
+                                <svg class="w-full h-full text-teal-400" viewBox="0 0 100 100" fill="none">
+                                    <path d="M20 75L20 25L45 55L70 25L70 75" stroke="currentColor" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <circle cx="80" cy="25" r="7" fill="#fbbf24"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <span class="text-lg font-bold font-heading text-white">Next Million Consultancy</span>
+                    </div>
+                    <p class="text-xs text-slate-400 max-w-sm leading-relaxed">
+                        Leading operations, field audit, exam invigilation, and AI data crowdsourcing consultancy based in Sarankul, Nayagarh, Odisha.
+                    </p>
+                    <p class="text-xs text-slate-500">Incorporated May 2026</p>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Quick Links</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-teal-400 transition-colors">Home</a></li>
+                        <li><a href="#services" class="hover:text-teal-400 transition-colors">Our Services</a></li>
+                        <li><a href="#stats" class="hover:text-teal-400 transition-colors">Impact & Numbers</a></li>
+                        <li><a href="#clients" class="hover:text-teal-400 transition-colors">Industries Served</a></li>
+                        <li><a href="#contact" class="hover:text-teal-400 transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact & Address -->
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-xs uppercase tracking-wider">Office Location</h4>
+                    <p class="text-xs text-slate-400 leading-relaxed">
+                        Sarankul, Nayagarh<br>
+                        Odisha - 752080, India<br>
+                        Phone: +91 8917440534
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800/80 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
+                <p>&copy; 2026 Next Million Consultancy. All rights reserved.</p>
+                <p class="mt-2 sm:mt-0">Operations • Proctoring • AI Data Annotation</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        // Mobile Navigation Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Contact Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const successBox = document.getElementById('form-success');
+            const form = document.getElementById('contact-form');
+            
+            successBox.classList.remove('hidden');
+            form.reset();
+
+            setTimeout(() => {
+                successBox.classList.add('hidden');
+            }, 6000);
+        }
+    </script>
+</body>
+</html>
